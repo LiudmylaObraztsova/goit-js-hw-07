@@ -1,7 +1,7 @@
 const listRef = document.querySelector('#categories');
-// console.log(listRef);
+
 const listItemsRef = listRef.querySelectorAll('li.item');
-// console.log(listItemsRef);
+
 console.log(`В списке ${listItemsRef.length} категории.`);
 
 const countItemsRef = (items) => {
