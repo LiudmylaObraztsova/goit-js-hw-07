@@ -1,0 +1,17 @@
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+li {
+  margin: auto;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

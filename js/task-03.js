@@ -16,6 +16,27 @@ const images = [
   },
 ];
 
+const createImgTags = image => {
+  return`
+  <li>
+    <img src = ${image.url} alt = ${image.alt}>
+  </li>
+  `
+}
+
+const createImgTagsGallery = images
+  .map(createImgTags)
+  .join('');
+
+
+const imagesGalleryRef = document.querySelector('#gallery');
+imagesGalleryRef.classList.add('wrapper');
+imagesGalleryRef.width=320;;
+
+imagesGalleryRef.insertAdjacentHTML('afterbegin', createImgTagsGallery);
+
+console.log(createImgTagsGallery);
+
 // Используй массив объектов images для создания тегов img вложенных в li. 
 // Для создания разметки используй шаблонные строки и insertAdjacentHTML().
 
