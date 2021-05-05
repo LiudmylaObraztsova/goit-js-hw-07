@@ -7,7 +7,8 @@ const images = [
   {
     url:
       'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+      alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
+   
   },
   {
     url:
@@ -16,29 +17,14 @@ const images = [
   },
 ];
 
-const createImgTags = image => {
-  return`
-  <li>
-    <img src = ${image.url} alt = ${image.alt}>
-  </li>
-  `
+const galleryRef = document.querySelector('#gallery');
+
+
+const createImgTag = ({url, alt}) => {
+    return `<li><img src='${url}' alt='${alt}'/></li>`;
 }
 
-const createImgTagsGallery = images
-  .map(createImgTags)
-  .join('');
+const createImgTags = arr => arr.map(createImgTag);
+const createImgTagsGallery = createImgTags(images).join(' ');
+galleryRef.insertAdjacentHTML('afterbegin', createImgTagsGallery);
 
-
-const imagesGalleryRef = document.querySelector('#gallery');
-imagesGalleryRef.classList.add('wrapper');
-imagesGalleryRef.width=320;;
-
-imagesGalleryRef.insertAdjacentHTML('afterbegin', createImgTagsGallery);
-
-console.log(createImgTagsGallery);
-
-// Используй массив объектов images для создания тегов img вложенных в li. 
-// Для создания разметки используй шаблонные строки и insertAdjacentHTML().
-
-// Все элементы галереи должны добавляться в DOM за одну операцию вставки.
-// Добавь минимальное оформление галереи флексбоксами или гридами через css-классы.
