@@ -9,7 +9,7 @@ const checkValue = (event) => {
     }
     inputRef.classList.remove('valid');
     inputRef.classList.add('invalid');
-    return;
+   
 };
 
 inputRef.addEventListener('blur', checkValue);
